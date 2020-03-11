@@ -38,7 +38,7 @@ class PageVC: UIPageViewController {
         #if DEBUG
             rewardedAd = GADRewardedAd(adUnitID: "ca-app-pub-3940256099942544/1712485313")
         #else
-            rewardedAd = GADRewardedAd(adUnitID: "ca-app-pub-1223027370530841/3292619156")
+//            rewardedAd = GADRewardedAd(adUnitID: "ca-app-pub-1223027370530841/3292619156")
         #endif
  
         rewardedAd?.load(GADRequest(), completionHandler: { (error) in

@@ -19,6 +19,8 @@
 		DBFD83B824164FFF00D24757 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFD83B724164FFF00D24757 /* LaunchScreen.swift */; };
 		DBFD83BA2416557600D24757 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFD83B92416557600D24757 /* ViewController.swift */; };
 		DBFD8402241880FF00D24757 /* AnswerLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFD8401241880FF00D24757 /* AnswerLibrary.swift */; };
+		DBFD84042418E80D00D24757 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFD84032418E80D00D24757 /* IAPManager.swift */; };
+		DBFD84062419EAFE00D24757 /* GlobalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFD84052419EAFE00D24757 /* GlobalModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		DBFD83B724164FFF00D24757 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		DBFD83B92416557600D24757 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DBFD8401241880FF00D24757 /* AnswerLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerLibrary.swift; sourceTree = "<group>"; };
+		DBFD84032418E80D00D24757 /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
+		DBFD84052419EAFE00D24757 /* GlobalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 				DB0722882415E5D2005F77B3 /* Main.storyboard */,
 				DBFD83B724164FFF00D24757 /* LaunchScreen.swift */,
 				DBFD8401241880FF00D24757 /* AnswerLibrary.swift */,
+				DBFD84032418E80D00D24757 /* IAPManager.swift */,
+				DBFD84052419EAFE00D24757 /* GlobalModel.swift */,
 				DB07228B2415E5D3005F77B3 /* Assets.xcassets */,
 				DB07228D2415E5D3005F77B3 /* LaunchScreen.storyboard */,
 				DB0722902415E5D3005F77B3 /* Info.plist */,
@@ -221,7 +227,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBFD84042418E80D00D24757 /* IAPManager.swift in Sources */,
 				DB0722872415E5D2005F77B3 /* MainVC.swift in Sources */,
+				DBFD84062419EAFE00D24757 /* GlobalModel.swift in Sources */,
 				DB0722832415E5D2005F77B3 /* AppDelegate.swift in Sources */,
 				DBFD83B824164FFF00D24757 /* LaunchScreen.swift in Sources */,
 				DBFD8402241880FF00D24757 /* AnswerLibrary.swift in Sources */,
@@ -373,8 +381,9 @@
 			baseConfigurationReference = 3F134D6ACC9FCEF2E8A77F9E /* Pods-AnswerBook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H2YY9QHDYC;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 38AMPUQ98F;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AnswerBook/ThirdKit",
@@ -384,8 +393,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = uuu.com.AnswerBook1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HelloM.AnswerBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = AnswerBook_Develop;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -396,8 +406,9 @@
 			baseConfigurationReference = 2FCF20F86DB8504AA42F511E /* Pods-AnswerBook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H2YY9QHDYC;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 38AMPUQ98F;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AnswerBook/ThirdKit",
@@ -407,8 +418,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = uuu.com.AnswerBook1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HelloM.AnswerBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = AnswerBook_AppStore;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

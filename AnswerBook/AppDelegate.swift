@@ -16,6 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         
+        if let isRemoveAD = UserDefaults.standard.object(forKey: "isRemoveAD") as? Bool {
+            
+            GlobalModel.shared.isRemoveAD = isRemoveAD
+        }
+
         return true
     }
 

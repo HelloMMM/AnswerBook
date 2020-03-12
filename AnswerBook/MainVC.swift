@@ -21,15 +21,28 @@ class MainVC: UIViewController {
     var timer: Timer?
     var isSuccess = false
     var delegate: MainVCDelegate?
+    var iapManager = IAPManager.shared
+    @IBOutlet weak var sponsorBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
  
+        if GlobalModel.shared.isRemoveAD {
+            
+            sponsorBtn.isHidden = true
+        }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(removeAD), name: NSNotification.Name("RemoveAD") , object: nil)
+    }
+    
+    @objc func removeAD(notification: NSNotification) {
+            
+        sponsorBtn.isHidden = true
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         
-        print(traitCollection.userInterfaceStyle.rawValue)
+//        print(traitCollection.userInterfaceStyle.rawValue)
     }
     
     @IBAction func startProgress(_ sender: UIButton) {
@@ -52,5 +65,21 @@ class MainVC: UIViewController {
         startBtn.setTitle("解", for: .normal)
         self.isSuccess = false
     }
+    
+    @IBAction func sponsorClick(_ sender: UIButton) {
+        
+        let alert = UIAlertController(title: "支持", message: "是否願意花33$支持這個APP,\n可去除廣告.", preferredStyle: .alert)
+        
+        let ok = UIAlertAction(title: "好", style: .default) { (action) in
+            
+            self.iapManager.startPurchase()
+        }
+        
+        let no = UIAlertAction(title: "取消", style: .default, handler: nil)
+        
+        alert.addAction(no)
+        alert.addAction(ok)
+        
+        present(alert, animated: true, completion: nil)
+    }
 }
-

@@ -11,7 +11,7 @@ import UIKit
 class AnswerVC: UIViewController {
     
     @IBOutlet weak var answerLab: UILabel!
-    var answerStr = ""
+    var answerStr = "您還未誠心發問，\n請返回重新來過."
     
     override func viewDidLoad() {
         super.viewDidLoad()

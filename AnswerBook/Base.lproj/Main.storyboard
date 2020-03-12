@@ -113,27 +113,30 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yc2-3B-nBH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="yc2-3B-nBH">
                                 <rect key="frame" x="0.0" y="101" width="375" height="306"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">1. 首先，雙手持好手機，放在膝蓋或者桌子上。 2. 然後用 5~10 秒的時間集中精力與你的問題。 這些問題必須是封閉式問題。例如： "我該追求她嗎？" "剛面試的這個工作適合我嗎？" 3. 閉上眼睛，默念問題三遍，並長按住下方解的按鈕。 4. 深呼吸睜開眼，然後翻開下一頁看答案。</string>
+                                        <string key="content">  1. 首先，雙手持好手機，放在膝蓋或者桌子上。 2. 然後用 5~10 秒的時間集中精力與你的問題。 這些問題必須是封閉式問題。例如： "我該追求她嗎？" "剛面試的這個工作適合我嗎？" 3. 閉上眼睛，默念問題三遍，並長按住下方解的按鈕。 4. 深呼吸睜開眼，放開手並翻開下一頁看答案。</string>
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="19" name="PingFangTC-Light"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="5" firstLineHeadIndent="10" headIndent="10" tighteningFactorForTruncation="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="5" headIndent="10" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4f-2o-dcS">
-                                <rect key="frame" x="75" y="617" width="225" height="30"/>
+                                <rect key="frame" x="31.5" y="617" width="312" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="225" id="EGZ-cA-bEz"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="312" id="EGZ-cA-bEz"/>
                                     <constraint firstAttribute="height" constant="30" id="JEi-MD-liO"/>
                                 </constraints>
-                                <state key="normal" title="如果喜歡這個APP , 可以支持一下"/>
+                                <state key="normal" title="如果喜歡這個APP , 可以支持一下(可去除廣告)"/>
+                                <connections>
+                                    <action selector="sponsorClick:" destination="Byo-A4-6jy" eventType="touchUpInside" id="0Go-D2-GqK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -157,6 +160,7 @@
                     </view>
                     <connections>
                         <outlet property="circularProgressRing" destination="FLt-8c-1rC" id="S0C-7W-mgw"/>
+                        <outlet property="sponsorBtn" destination="L4f-2o-dcS" id="wM3-jp-YjJ"/>
                         <outlet property="startBtn" destination="IDo-YT-lGV" id="wBu-kX-8Sw"/>
                     </connections>
                 </viewController>

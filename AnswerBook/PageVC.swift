@@ -12,7 +12,6 @@ import GoogleMobileAds
 class PageVC: UIPageViewController {
     
     var viewControllerList: [UIViewController] = [UIViewController]()
-    var isScroll = false
     var rewardedAd: GADRewardedAd?
     
     override func viewDidLoad() {
@@ -38,7 +37,7 @@ class PageVC: UIPageViewController {
         #if DEBUG
             rewardedAd = GADRewardedAd(adUnitID: "ca-app-pub-3940256099942544/1712485313")
         #else
-//            rewardedAd = GADRewardedAd(adUnitID: "ca-app-pub-1223027370530841/3292619156")
+            rewardedAd = GADRewardedAd(adUnitID: "ca-app-pub-1223027370530841/3292619156")
         #endif
  
         rewardedAd?.load(GADRequest(), completionHandler: { (error) in
@@ -56,16 +55,27 @@ extension PageVC: MainVCDelegate {
     
     func questionSuccess() {
         
+        if GlobalModel.shared.isRemoveAD {
+            
+            nextPage()
+            return
+        }
+        
+        if rewardedAd?.isReady == true {
+            
+            rewardedAd?.present(fromRootViewController: self, delegate: self)
+        }
+    }
+    
+    func nextPage() {
+        
         let answerVC = viewControllerList[1] as! AnswerVC
         
         let answerIndex = Int.random(in: 0...answerList.count-1)
         
         answerVC.answerStr = answerList[answerIndex]
         
-        if rewardedAd?.isReady == true {
-            
-            rewardedAd?.present(fromRootViewController: self, delegate: self)
-        }
+        setViewControllers([answerVC], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: nil)
     }
 }
 
@@ -73,7 +83,7 @@ extension PageVC: GADRewardedAdDelegate {
     
     func rewardedAd(_ rewardedAd: GADRewardedAd, userDidEarn reward: GADAdReward) {
         
-        isScroll = true
+        nextPage()
     }
     /// Tells the delegate that the rewarded ad was presented.
     func rewardedAdDidPresent(_ rewardedAd: GADRewardedAd) {
@@ -105,13 +115,6 @@ extension PageVC: UIPageViewControllerDataSource {
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        
-        if !isScroll {
-            
-            return nil
-        }
-        
-        isScroll = false
         
         // 取得當前頁數的 index(未翻頁前)
         let currentIndex: Int =  self.viewControllerList.firstIndex(of: viewController)!

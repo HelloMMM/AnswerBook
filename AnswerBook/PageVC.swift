@@ -13,6 +13,7 @@ class PageVC: UIPageViewController {
     
     var viewControllerList: [UIViewController] = [UIViewController]()
     var rewardedAd: GADRewardedAd?
+    var adCount = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,10 +62,19 @@ extension PageVC: MainVCDelegate {
             return
         }
         
-        if rewardedAd?.isReady == true {
+        if adCount >= 2 {
             
-            rewardedAd?.present(fromRootViewController: self, delegate: self)
+            if rewardedAd?.isReady == true {
+                
+                rewardedAd?.present(fromRootViewController: self, delegate: self)
+            }
+        } else {
+            
+            adCount += 1
+            nextPage()
         }
+        
+        
     }
     
     func nextPage() {
@@ -83,6 +93,7 @@ extension PageVC: GADRewardedAdDelegate {
     
     func rewardedAd(_ rewardedAd: GADRewardedAd, userDidEarn reward: GADAdReward) {
         
+        adCount = 1
         nextPage()
     }
     /// Tells the delegate that the rewarded ad was presented.

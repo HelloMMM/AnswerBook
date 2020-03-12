@@ -28,10 +28,14 @@ PODS:
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
+  - NVActivityIndicatorView (4.8.0):
+    - NVActivityIndicatorView/Presenter (= 4.8.0)
+  - NVActivityIndicatorView/Presenter (4.8.0)
   - UICircularProgressRing (6.5.0)
 
 DEPENDENCIES:
   - Google-Mobile-Ads-SDK
+  - NVActivityIndicatorView
   - UICircularProgressRing
 
 SPEC REPOS:
@@ -40,6 +44,7 @@ SPEC REPOS:
     - GoogleAppMeasurement
     - GoogleUtilities
     - nanopb
+    - NVActivityIndicatorView
     - UICircularProgressRing
 
 SPEC CHECKSUMS:
@@ -47,8 +52,9 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: d0560d915abf15e692e8538ba1d58442217b6aff
   GoogleUtilities: 06eb53bb579efe7099152735900dd04bf09e7275
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
+  NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
   UICircularProgressRing: e6852e8f88e296cbbbe2720cccb55241acda6708
 
-PODFILE CHECKSUM: eb44b1306b3690588cd5dfccb1b1e0d44f55eae0
+PODFILE CHECKSUM: 2ca0394c8609c46e6d2ab384b6bbeace1688e071
 
 COCOAPODS: 1.8.3

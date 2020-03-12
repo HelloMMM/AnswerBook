@@ -33,6 +33,8 @@ class IAPManager: NSObject {
     
     func startPurchase() {
         
+        NVLoadingView.startBlockLoadingView()
+        
         let payment = SKPayment(product: products[0])
         SKPaymentQueue.default().add(payment)
     }
@@ -77,6 +79,7 @@ extension IAPManager: SKPaymentTransactionObserver {
                 case .purchased:
                     print("交易成功")
                     
+                    NVLoadingView.stopBlockLoadingView()
                     GlobalModel.shared.isRemoveAD = true
                     UserDefaults.standard.set(true, forKey: "isRemoveAD")
                     NotificationCenter.default.post(name: Notification.Name("RemoveAD"), object: nil)
@@ -86,6 +89,7 @@ extension IAPManager: SKPaymentTransactionObserver {
                 case .failed:
                     print("交易失敗")
                     
+                    NVLoadingView.stopBlockLoadingView()
                     SKPaymentQueue.default().finishTransaction(transaction)
                     if let error = transaction.error as? SKError {
                         switch error.code {
@@ -101,8 +105,10 @@ extension IAPManager: SKPaymentTransactionObserver {
                     }
                 case .restored:
                     print("復原成功...")
+                    NVLoadingView.stopBlockLoadingView()
                 default:
                     print(transaction.transactionState.rawValue)
+                    NVLoadingView.stopBlockLoadingView()
                 }
             }
         }

@@ -9,5 +9,6 @@ target 'AnswerBook' do
 
 pod 'UICircularProgressRing'
 pod'Google-Mobile-Ads-SDK'
+pod 'NVActivityIndicatorView'
 
 end

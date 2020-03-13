@@ -84,6 +84,7 @@ extension PageVC: MainVCDelegate {
         let answerIndex = Int.random(in: 0...answerList.count-1)
         
         answerVC.answerStr = answerList[answerIndex]
+        answerVC.answerEn = answerEnList[answerIndex]
         
         setViewControllers([answerVC], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: nil)
     }

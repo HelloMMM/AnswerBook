@@ -27,12 +27,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //
 //        }
 //
-//        let dic = ["answerEnList": answerEnList]
+//        let dic = ["answerList": answerList]
 //
 //        do {
 //            let data = try JSONSerialization.data(withJSONObject: dic, options: [.prettyPrinted])
 //            let decoded = try JSONSerialization.jsonObject(with: data, options: [])
-//            let uploadTask = gsReference.putData(data, metadata: nil) { (metadata, error) in
+//            let uploadTask = answerListReference.putData(data, metadata: nil) { (metadata, error) in
 //
 //            }
 //        } catch {
@@ -58,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
         }
-        
+
         answerListReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
             if error != nil {
 

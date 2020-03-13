@@ -48,11 +48,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FLt-8c-1rC" customClass="UICircularProgressRing" customModule="UICircularProgressRing">
-                                <rect key="frame" x="67.5" y="417" width="240" height="176"/>
+                                <rect key="frame" x="90" y="417" width="195" height="195"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDo-YT-lGV">
-                                        <rect key="frame" x="20" y="20" width="200" height="136"/>
-                                        <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="45"/>
+                                        <rect key="frame" x="20" y="20" width="155" height="155"/>
+                                        <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="45"/>
                                         <state key="normal" title="解">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -65,11 +65,10 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="2yW-p1-Z25"/>
                                     <constraint firstAttribute="bottom" secondItem="IDo-YT-lGV" secondAttribute="bottom" constant="20" symbolic="YES" id="BRc-Vc-JQ0"/>
                                     <constraint firstItem="IDo-YT-lGV" firstAttribute="top" secondItem="FLt-8c-1rC" secondAttribute="top" constant="20" symbolic="YES" id="H06-Dw-8J7"/>
                                     <constraint firstAttribute="trailing" secondItem="IDo-YT-lGV" secondAttribute="trailing" constant="20" symbolic="YES" id="IcS-Oa-34Z"/>
-                                    <constraint firstAttribute="height" constant="176" id="Px8-LA-PBL"/>
+                                    <constraint firstAttribute="width" secondItem="FLt-8c-1rC" secondAttribute="height" multiplier="1:1" id="fdZ-5q-wYu"/>
                                     <constraint firstItem="IDo-YT-lGV" firstAttribute="leading" secondItem="FLt-8c-1rC" secondAttribute="leading" constant="20" symbolic="YES" id="vVG-9q-VfH"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -142,6 +141,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Lav-Vf-YrR" firstAttribute="bottom" secondItem="FLt-8c-1rC" secondAttribute="top" multiplier="4:2.5" id="0D5-1r-cAO"/>
+                            <constraint firstItem="Lav-Vf-YrR" firstAttribute="trailing" secondItem="FLt-8c-1rC" secondAttribute="trailing" constant="90" id="8o6-dN-oyU"/>
                             <constraint firstItem="lCk-4s-HYb" firstAttribute="top" secondItem="Gws-pi-uiV" secondAttribute="top" id="H5S-AZ-pdm"/>
                             <constraint firstItem="Lav-Vf-YrR" firstAttribute="bottom" secondItem="L4f-2o-dcS" secondAttribute="bottom" constant="20" id="MMj-cd-1LM"/>
                             <constraint firstItem="FLt-8c-1rC" firstAttribute="top" secondItem="yc2-3B-nBH" secondAttribute="bottom" constant="10" id="PfM-1g-kVP"/>
@@ -149,11 +149,11 @@
                             <constraint firstItem="lCk-4s-HYb" firstAttribute="leading" secondItem="Gws-pi-uiV" secondAttribute="leading" id="bHD-DE-G2x"/>
                             <constraint firstItem="Z42-yc-eW0" firstAttribute="top" secondItem="Lav-Vf-YrR" secondAttribute="top" constant="30" id="bNs-UF-Mee"/>
                             <constraint firstAttribute="trailing" secondItem="lCk-4s-HYb" secondAttribute="trailing" id="c85-UE-ryi"/>
+                            <constraint firstItem="FLt-8c-1rC" firstAttribute="leading" secondItem="Lav-Vf-YrR" secondAttribute="leading" constant="90" id="d3p-Fi-pQt"/>
                             <constraint firstAttribute="bottom" secondItem="lCk-4s-HYb" secondAttribute="bottom" id="dWJ-5W-zFh"/>
                             <constraint firstItem="L4f-2o-dcS" firstAttribute="centerX" secondItem="Gws-pi-uiV" secondAttribute="centerX" id="fda-6X-Oh6"/>
                             <constraint firstItem="yc2-3B-nBH" firstAttribute="top" secondItem="Z42-yc-eW0" secondAttribute="bottom" constant="8" symbolic="YES" id="tsO-bp-6H5"/>
                             <constraint firstItem="yc2-3B-nBH" firstAttribute="trailing" secondItem="Lav-Vf-YrR" secondAttribute="trailing" id="wR7-v1-lwh"/>
-                            <constraint firstItem="FLt-8c-1rC" firstAttribute="centerX" secondItem="Gws-pi-uiV" secondAttribute="centerX" id="xIO-F8-oiP"/>
                             <constraint firstItem="Z42-yc-eW0" firstAttribute="centerX" secondItem="Gws-pi-uiV" secondAttribute="centerX" id="zlp-IV-LQU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Lav-Vf-YrR"/>
@@ -166,7 +166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GHS-4x-7mV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1492.753623188406" y="-189.50892857142856"/>
+            <point key="canvasLocation" x="1492" y="-190.25487256371815"/>
         </scene>
         <!--AnswerVC-->
         <scene sceneID="XUz-5t-Apu">
@@ -179,27 +179,37 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backImg" translatesAutoresizingMaskIntoConstraints="NO" id="RJM-TU-KAs">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASG-JC-7YH">
-                                <rect key="frame" x="65" y="212.5" width="245" height="42"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你我他" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASG-JC-7YH">
+                                <rect key="frame" x="0.0" y="256" width="375" height="35"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="25"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="abc" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDK-PX-wQZ">
+                                <rect key="frame" x="0.0" y="207.5" width="375" height="20"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Rockwell-BoldItalic" family="Rockwell" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="iUg-r8-ln2" firstAttribute="trailing" secondItem="ASG-JC-7YH" secondAttribute="trailing" constant="65" id="6BF-x4-pIi"/>
+                            <constraint firstItem="iUg-r8-ln2" firstAttribute="trailing" secondItem="HDK-PX-wQZ" secondAttribute="trailing" id="2mm-Yr-gb5"/>
                             <constraint firstAttribute="trailing" secondItem="RJM-TU-KAs" secondAttribute="trailing" id="7TN-9m-Li4"/>
+                            <constraint firstItem="ASG-JC-7YH" firstAttribute="top" secondItem="HDK-PX-wQZ" secondAttribute="bottom" constant="28.5" id="9Jw-5f-q54"/>
+                            <constraint firstItem="iUg-r8-ln2" firstAttribute="trailing" secondItem="ASG-JC-7YH" secondAttribute="trailing" id="DgK-cK-Kxp"/>
+                            <constraint firstItem="ASG-JC-7YH" firstAttribute="leading" secondItem="iUg-r8-ln2" secondAttribute="leading" id="EfI-nX-RC0"/>
                             <constraint firstAttribute="bottom" secondItem="RJM-TU-KAs" secondAttribute="bottom" id="QeO-t8-0FG"/>
-                            <constraint firstItem="ASG-JC-7YH" firstAttribute="centerY" secondItem="bKk-0G-d9I" secondAttribute="centerY" constant="-100" id="Tc1-J9-uQj"/>
-                            <constraint firstItem="ASG-JC-7YH" firstAttribute="leading" secondItem="iUg-r8-ln2" secondAttribute="leading" constant="65" id="bTm-JD-3ef"/>
+                            <constraint firstItem="ASG-JC-7YH" firstAttribute="centerY" secondItem="bKk-0G-d9I" secondAttribute="centerY" constant="-60" id="Tc1-J9-uQj"/>
                             <constraint firstItem="RJM-TU-KAs" firstAttribute="top" secondItem="bKk-0G-d9I" secondAttribute="top" id="gUE-mI-a9k"/>
                             <constraint firstItem="RJM-TU-KAs" firstAttribute="leading" secondItem="bKk-0G-d9I" secondAttribute="leading" id="uoF-gd-Qmc"/>
+                            <constraint firstItem="HDK-PX-wQZ" firstAttribute="leading" secondItem="iUg-r8-ln2" secondAttribute="leading" id="y1O-Pu-ifO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iUg-r8-ln2"/>
                     </view>
                     <navigationItem key="navigationItem" id="008-Ti-7Ep"/>
                     <connections>
+                        <outlet property="answerEnLab" destination="HDK-PX-wQZ" id="9mO-Rd-5lo"/>
                         <outlet property="answerLab" destination="ASG-JC-7YH" id="TYf-qT-qnP"/>
                     </connections>
                 </viewController>

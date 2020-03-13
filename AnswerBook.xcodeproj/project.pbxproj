@@ -22,6 +22,7 @@
 		DBFD84042418E80D00D24757 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFD84032418E80D00D24757 /* IAPManager.swift */; };
 		DBFD84062419EAFE00D24757 /* GlobalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFD84052419EAFE00D24757 /* GlobalModel.swift */; };
 		DBFD8408241A1FA200D24757 /* NVLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFD8407241A1FA200D24757 /* NVLoadingView.swift */; };
+		DBFD840A241A3FAB00D24757 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBFD8409241A3FAB00D24757 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		DBFD84032418E80D00D24757 /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
 		DBFD84052419EAFE00D24757 /* GlobalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalModel.swift; sourceTree = "<group>"; };
 		DBFD8407241A1FA200D24757 /* NVLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVLoadingView.swift; sourceTree = "<group>"; };
+		DBFD8409241A3FAB00D24757 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				DB07228B2415E5D3005F77B3 /* Assets.xcassets */,
 				DB07228D2415E5D3005F77B3 /* LaunchScreen.storyboard */,
 				DB0722902415E5D3005F77B3 /* Info.plist */,
+				DBFD8409241A3FAB00D24757 /* GoogleService-Info.plist */,
 			);
 			path = AnswerBook;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB07228F2415E5D3005F77B3 /* LaunchScreen.storyboard in Resources */,
+				DBFD840A241A3FAB00D24757 /* GoogleService-Info.plist in Resources */,
 				DB07228C2415E5D3005F77B3 /* Assets.xcassets in Resources */,
 				DB07228A2415E5D2005F77B3 /* Main.storyboard in Resources */,
 			);

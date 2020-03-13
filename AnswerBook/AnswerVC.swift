@@ -11,7 +11,9 @@ import UIKit
 class AnswerVC: UIViewController {
     
     @IBOutlet weak var answerLab: UILabel!
+    @IBOutlet weak var answerEnLab: UILabel!
     var answerStr = "您還未誠心發問，\n請返回重新來過."
+    var answerEn = "You have not sincere questions,\n please return to start over."
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,5 +23,6 @@ class AnswerVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         answerLab.text = answerStr
+        answerEnLab.text = answerEn
     }
 }

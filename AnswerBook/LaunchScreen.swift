@@ -29,7 +29,7 @@ class LaunchScreen: UIViewController {
         skView.presentScene(skScene)
         view.addSubview(skView)
         
-        let labelNode = SKLabelNode(fontNamed: "PingFangTC-Semibold")
+        let labelNode = SKLabelNode(fontNamed: "PingFangTC-Medium")
         labelNode.text = "解答之書"
         labelNode.fontColor = .black
         labelNode.fontSize = 50

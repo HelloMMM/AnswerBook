@@ -10,5 +10,7 @@ target 'AnswerBook' do
 pod 'UICircularProgressRing'
 pod'Google-Mobile-Ads-SDK'
 pod 'NVActivityIndicatorView'
+pod 'Firebase/Analytics'
+pod 'Firebase/Storage'
 
 end

@@ -12,13 +12,15 @@ import GoogleMobileAds
 class PageVC: UIPageViewController {
     
     var viewControllerList: [UIViewController] = [UIViewController]()
-    var rewardedAd: GADRewardedAd?
+    var rewarAd: GADRewardedAd!
+    var interstitial: GADInterstitial!
     var adCount = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        createAndLoadRewardedAd()
+        interstitial = createAndLoadInterstitial()
+        rewarAd = createAndLoadRewardedAd()
         
         delegate = self
         dataSource = self
@@ -33,15 +35,28 @@ class PageVC: UIPageViewController {
         setViewControllers([viewControllerList.first!], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: nil)
     }
     
-    func createAndLoadRewardedAd() {
+    func createAndLoadInterstitial() -> GADInterstitial {
         
         #if DEBUG
-            rewardedAd = GADRewardedAd(adUnitID: "ca-app-pub-3940256099942544/1712485313")
+            interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
         #else
-            rewardedAd = GADRewardedAd(adUnitID: "ca-app-pub-1223027370530841/3292619156")
+            interstitial = GADInterstitial(adUnitID: "ca-app-pub-1223027370530841/1326755197")
+        #endif
+        interstitial.delegate = self
+        interstitial.load(GADRequest())
+        
+        return interstitial
+    }
+    
+    func createAndLoadRewardedAd() -> GADRewardedAd {
+        
+        #if DEBUG
+            rewarAd = GADRewardedAd(adUnitID: "ca-app-pub-3940256099942544/1712485313")
+        #else
+            rewarAd = GADRewardedAd(adUnitID: "ca-app-pub-1223027370530841/3292619156")
         #endif
  
-        rewardedAd?.load(GADRequest(), completionHandler: { (error) in
+        rewarAd.load(GADRequest(), completionHandler: { (error) in
             
             if let error = error {
                 print("Loading failed: \(error)")
@@ -49,6 +64,8 @@ class PageVC: UIPageViewController {
                 print("Loading Succeeded")
             }
         })
+        
+        return rewarAd
     }
 }
 
@@ -64,17 +81,27 @@ extension PageVC: MainVCDelegate {
         
         if adCount >= 2 {
             
-            if rewardedAd?.isReady == true {
-                
-                rewardedAd?.present(fromRootViewController: self, delegate: self)
+            if interstitial.isReady {
+                interstitial.present(fromRootViewController: self)
+            } else {
+              
+                interstitial = createAndLoadInterstitial()
+                nextPage()
             }
+            
+//            if rewarAd?.isReady == true {
+//
+//                rewarAd?.present(fromRootViewController: self, delegate: self)
+//            } else {
+//
+//                rewarAd = createAndLoadRewardedAd()
+//                nextPage()
+//            }
         } else {
             
             adCount += 1
             nextPage()
         }
-        
-        
     }
     
     func nextPage() {
@@ -87,6 +114,16 @@ extension PageVC: MainVCDelegate {
         answerVC.answerEn = answerEnList[answerIndex]
         
         setViewControllers([answerVC], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: nil)
+    }
+}
+
+extension PageVC: GADInterstitialDelegate {
+    
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        
+        nextPage()
+        adCount = 1
+        interstitial = createAndLoadInterstitial()
     }
 }
 
@@ -104,7 +141,7 @@ extension PageVC: GADRewardedAdDelegate {
     /// Tells the delegate that the rewarded ad was dismissed.
     func rewardedAdDidDismiss(_ rewardedAd: GADRewardedAd) {
         
-        createAndLoadRewardedAd()
+        rewarAd = createAndLoadRewardedAd()
     }
     /// Tells the delegate that the rewarded ad failed to present.
     func rewardedAd(_ rewardedAd: GADRewardedAd, didFailToPresentWithError error: Error) {

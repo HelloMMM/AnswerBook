@@ -42,9 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        #endif
         
         answerEnListReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
-            if error != nil {
-
-            } else {
+            if error == nil {
 
                 do {
                     let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
@@ -60,9 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         answerListReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
-            if error != nil {
-
-            } else {
+            if error == nil {
 
                 do {
                     let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)

@@ -28,11 +28,14 @@ class PageVC: UIPageViewController {
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainVC") as! MainVC
         viewController.delegate = self
         let answerVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AnswerVC") as! AnswerVC
+        if !GlobalModel.shared.isRemoveAD {
+            answerVC.addBannerViewToView()
+        }
         
         viewControllerList.append(viewController)
         viewControllerList.append(answerVC)
         
-        setViewControllers([viewControllerList.first!], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: nil)
+        setViewControllers([viewControllerList.first!], direction: .forward, animated: true, completion: nil)
     }
     
     func createAndLoadInterstitial() -> GADInterstitial {

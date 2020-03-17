@@ -29,7 +29,7 @@
 		2FCF20F86DB8504AA42F511E /* Pods-AnswerBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnswerBook.release.xcconfig"; path = "Target Support Files/Pods-AnswerBook/Pods-AnswerBook.release.xcconfig"; sourceTree = "<group>"; };
 		3F134D6ACC9FCEF2E8A77F9E /* Pods-AnswerBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnswerBook.debug.xcconfig"; path = "Target Support Files/Pods-AnswerBook/Pods-AnswerBook.debug.xcconfig"; sourceTree = "<group>"; };
 		AE927A197890AD69D3AD80B5 /* Pods_AnswerBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnswerBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB07227F2415E5D2005F77B3 /* AnswerBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnswerBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB07227F2415E5D2005F77B3 /* 解答之星.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "解答之星.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB0722822415E5D2005F77B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB0722842415E5D2005F77B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DB0722862415E5D2005F77B3 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 		DB0722802415E5D2005F77B3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DB07227F2415E5D2005F77B3 /* AnswerBook.app */,
+				DB07227F2415E5D2005F77B3 /* 解答之星.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,7 +137,7 @@
 			);
 			name = AnswerBook;
 			productName = AnswerBook;
-			productReference = DB07227F2415E5D2005F77B3 /* AnswerBook.app */;
+			productReference = DB07227F2415E5D2005F77B3 /* 解答之星.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -402,9 +402,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.HelloM.AnswerBook;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "解答之星";
 				PROVISIONING_PROFILE_SPECIFIER = AnswerBook_Develop;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -429,9 +429,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.HelloM.AnswerBook;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "解答之星";
 				PROVISIONING_PROFILE_SPECIFIER = AnswerBook_AppStore;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

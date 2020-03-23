@@ -14,6 +14,7 @@
 		DB07228A2415E5D2005F77B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB0722882415E5D2005F77B3 /* Main.storyboard */; };
 		DB07228C2415E5D3005F77B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB07228B2415E5D3005F77B3 /* Assets.xcassets */; };
 		DB07228F2415E5D3005F77B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB07228D2415E5D3005F77B3 /* LaunchScreen.storyboard */; };
+		DB35DC892424619900D27B7D /* PurchasVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB35DC882424619900D27B7D /* PurchasVC.swift */; };
 		DBFD83B42416384C00D24757 /* AnswerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFD83B32416384C00D24757 /* AnswerVC.swift */; };
 		DBFD83B6241640BF00D24757 /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFD83B5241640BF00D24757 /* PageVC.swift */; };
 		DBFD83B824164FFF00D24757 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFD83B724164FFF00D24757 /* LaunchScreen.swift */; };
@@ -37,6 +38,7 @@
 		DB07228B2415E5D3005F77B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB07228E2415E5D3005F77B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB0722902415E5D3005F77B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB35DC882424619900D27B7D /* PurchasVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasVC.swift; sourceTree = "<group>"; };
 		DBFD83B32416384C00D24757 /* AnswerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerVC.swift; sourceTree = "<group>"; };
 		DBFD83B5241640BF00D24757 /* PageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageVC.swift; sourceTree = "<group>"; };
 		DBFD83B724164FFF00D24757 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				DBFD83B5241640BF00D24757 /* PageVC.swift */,
 				DB0722862415E5D2005F77B3 /* MainVC.swift */,
 				DBFD83B32416384C00D24757 /* AnswerVC.swift */,
+				DB35DC882424619900D27B7D /* PurchasVC.swift */,
 				DBFD8401241880FF00D24757 /* AnswerLibrary.swift */,
 				DBFD84052419EAFE00D24757 /* GlobalModel.swift */,
 				DBFD84032418E80D00D24757 /* IAPManager.swift */,
@@ -243,6 +246,7 @@
 				DBFD8408241A1FA200D24757 /* NVLoadingView.swift in Sources */,
 				DBFD83B6241640BF00D24757 /* PageVC.swift in Sources */,
 				DBFD83BA2416557600D24757 /* ViewController.swift in Sources */,
+				DB35DC892424619900D27B7D /* PurchasVC.swift in Sources */,
 				DBFD83B42416384C00D24757 /* AnswerVC.swift in Sources */,
 				DB0722852415E5D2005F77B3 /* SceneDelegate.swift in Sources */,
 			);
@@ -402,7 +406,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.HelloM.AnswerBook;
 				PRODUCT_NAME = "解答之星";
 				PROVISIONING_PROFILE_SPECIFIER = AnswerBook_Develop;
@@ -429,7 +433,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.HelloM.AnswerBook;
 				PRODUCT_NAME = "解答之星";
 				PROVISIONING_PROFILE_SPECIFIER = AnswerBook_AppStore;

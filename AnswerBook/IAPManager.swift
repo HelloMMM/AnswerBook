@@ -10,7 +10,7 @@ import UIKit
 import StoreKit
 
 class IAPManager: NSObject {
-
+    
     let productID = "HelloM.AnswerBook.item01"
     static let shared = IAPManager()
     var reuqest: SKProductsRequest!
@@ -35,15 +35,27 @@ class IAPManager: NSObject {
         
         NVLoadingView.startBlockLoadingView()
         
+        if products.count == 0 {
+            
+            NVLoadingView.stopBlockLoadingView()
+            return
+        }
         let payment = SKPayment(product: products[0])
         SKPaymentQueue.default().add(payment)
+    }
+    
+    func restorePurchase() {
+        
+        if SKPaymentQueue.canMakePayments() {
+            SKPaymentQueue.default().restoreCompletedTransactions()
+        }
     }
 }
 
 extension IAPManager: SKProductsRequestDelegate {
     
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-    
+        
         for transaction: SKPaymentTransaction in SKPaymentQueue.default().transactions {
             
             SKPaymentQueue.default().finishTransaction(transaction)
@@ -52,7 +64,7 @@ extension IAPManager: SKProductsRequestDelegate {
         if response.products.count != 0 {
             
             for product: SKProduct in response.products {
-                        
+                
                 print("---------商品資訊---------")
                 print("商品標题: \(product.localizedTitle)")
                 print("商品描述: \(product.localizedDescription)")
@@ -105,7 +117,12 @@ extension IAPManager: SKPaymentTransactionObserver {
                     }
                 case .restored:
                     print("復原成功...")
-                    NVLoadingView.stopBlockLoadingView()
+                    
+                    GlobalModel.shared.isRemoveAD = true
+                    UserDefaults.standard.set(true, forKey: "isRemoveAD")
+                    NotificationCenter.default.post(name: Notification.Name("RestoresSuccess"), object: nil)
+                    NotificationCenter.default.post(name: Notification.Name("RemoveAD"), object: nil)
+                    
                 default:
                     print(transaction.transactionState.rawValue)
                     NVLoadingView.stopBlockLoadingView()

@@ -18,28 +18,26 @@ class IAPManager: NSObject {
     
     override init() {
         super.init()
+            
+        NVLoadingView.startBlockLoadingView()
         
-        if SKPaymentQueue.canMakePayments() {
-            
-            let products = NSSet(array: [productID])
-            
-            reuqest = SKProductsRequest(productIdentifiers: products as! Set<String>)
-            reuqest.delegate = self
-            reuqest.start()
-        }
+        let products = NSSet(array: [productID])
+        
+        reuqest = SKProductsRequest(productIdentifiers: products as! Set<String>)
+        reuqest.delegate = self
+        reuqest.start()
         
         SKPaymentQueue.default().add(self)
     }
     
     func startPurchase() {
         
-        NVLoadingView.startBlockLoadingView()
-        
         if products.count == 0 {
-            
-            NVLoadingView.stopBlockLoadingView()
             return
         }
+        
+        NVLoadingView.startBlockLoadingView()
+        
         let payment = SKPayment(product: products[0])
         SKPaymentQueue.default().add(payment)
     }
@@ -76,6 +74,7 @@ extension IAPManager: SKProductsRequestDelegate {
             }
         }
         
+        NVLoadingView.stopBlockLoadingView()
     }
 }
 
@@ -118,16 +117,24 @@ extension IAPManager: SKPaymentTransactionObserver {
                 case .restored:
                     print("復原成功...")
                     
-                    GlobalModel.shared.isRemoveAD = true
-                    UserDefaults.standard.set(true, forKey: "isRemoveAD")
-                    NotificationCenter.default.post(name: Notification.Name("RestoresSuccess"), object: nil)
-                    NotificationCenter.default.post(name: Notification.Name("RemoveAD"), object: nil)
-                    
                 default:
                     print(transaction.transactionState.rawValue)
                     NVLoadingView.stopBlockLoadingView()
                 }
             }
         }
+    }
+    
+    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
+        
+        GlobalModel.shared.isRemoveAD = true
+        UserDefaults.standard.set(true, forKey: "isRemoveAD")
+        NotificationCenter.default.post(name: Notification.Name("RestoresSuccess"), object: nil)
+        NotificationCenter.default.post(name: Notification.Name("RemoveAD"), object: nil)
+    }
+    
+    func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
+        
+        print("復原失敗...")
     }
 }

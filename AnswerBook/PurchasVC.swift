@@ -10,11 +10,13 @@ import UIKit
 
 class PurchasVC: UIViewController {
 
-    let iapManager = IAPManager.shared
+    var iapManager: IAPManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        iapManager = IAPManager.shared
+        
         NotificationCenter.default.addObserver(self, selector: #selector(restoresSuccess), name: NSNotification.Name("RestoresSuccess"), object: nil)
     }
     

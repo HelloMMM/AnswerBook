@@ -18,28 +18,24 @@ class IAPManager: NSObject {
     
     override init() {
         super.init()
-            
-        NVLoadingView.startBlockLoadingView()
-        
-        let products = NSSet(array: [productID])
-        
-        reuqest = SKProductsRequest(productIdentifiers: products as! Set<String>)
-        reuqest.delegate = self
-        reuqest.start()
         
         SKPaymentQueue.default().add(self)
     }
     
     func startPurchase() {
         
-        if products.count == 0 {
-            return
-        }
-        
         NVLoadingView.startBlockLoadingView()
         
-        let payment = SKPayment(product: products[0])
-        SKPaymentQueue.default().add(payment)
+        for transaction: SKPaymentTransaction in SKPaymentQueue.default().transactions {
+            
+            SKPaymentQueue.default().finishTransaction(transaction)
+        }
+        
+        let products = NSSet(array: [productID])
+        
+        reuqest = SKProductsRequest(productIdentifiers: products as! Set<String>)
+        reuqest.delegate = self
+        reuqest.start()
     }
     
     func restorePurchase() {
@@ -53,11 +49,6 @@ class IAPManager: NSObject {
 extension IAPManager: SKProductsRequestDelegate {
     
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        
-        for transaction: SKPaymentTransaction in SKPaymentQueue.default().transactions {
-            
-            SKPaymentQueue.default().finishTransaction(transaction)
-        }
         
         if response.products.count != 0 {
             
@@ -74,7 +65,14 @@ extension IAPManager: SKProductsRequestDelegate {
             }
         }
         
-        NVLoadingView.stopBlockLoadingView()
+        if let productInfo = products.first {
+            
+            let payment = SKPayment(product: productInfo)
+            SKPaymentQueue.default().add(payment)
+        } else {
+            
+            NVLoadingView.stopBlockLoadingView()
+        }
     }
 }
 
@@ -135,6 +133,6 @@ extension IAPManager: SKPaymentTransactionObserver {
     
     func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
         
-        print("復原失敗...")
+        print("復原失敗... \(error.localizedDescription)")
     }
 }

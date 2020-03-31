@@ -30,7 +30,7 @@ class LaunchScreen: UIViewController {
         view.addSubview(skView)
         
         let labelNode = SKLabelNode(fontNamed: "PingFangTC-Medium")
-        labelNode.text = "解答之書"
+        labelNode.text = "解答之星"
         labelNode.fontColor = .black
         labelNode.fontSize = 50
         labelNode.horizontalAlignmentMode = .center

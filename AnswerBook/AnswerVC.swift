@@ -16,12 +16,15 @@ class AnswerVC: UIViewController {
     var answerStr = "您還未誠心發問，\n請返回重新來過."
     var answerEn = "You have not sincere questions,\n please return to start over."
     var bannerView: GADBannerView!
+    @IBOutlet weak var constellationImage: UIImageView!
+    @IBOutlet weak var bottonLine: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         NotificationCenter.default.addObserver(self, selector: #selector(removeAD), name: NSNotification.Name("RemoveAD") , object: nil)
         
+        bottonLine.layer.cornerRadius = 1.5
     }
     
     @objc func removeAD(notification: NSNotification) {

@@ -250,17 +250,45 @@
                                 <fontDescription key="fontDescription" name="Rockwell-BoldItalic" family="Rockwell" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="constellation-1" translatesAutoresizingMaskIntoConstraints="NO" id="AjF-NX-tti">
+                                <rect key="frame" x="20" y="586" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Eb9-nD-0OS"/>
+                                    <constraint firstAttribute="width" constant="50" id="izg-ct-D8O"/>
+                                </constraints>
+                            </imageView>
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QMF-pc-pvj">
+                                <rect key="frame" x="50" y="345.66666666666669" width="314" height="3"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="3" id="cMJ-JM-e6W"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textBoard" translatesAutoresizingMaskIntoConstraints="NO" id="z2D-JJ-cNJ">
+                                <rect key="frame" x="40" y="159" width="334" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="nsx-R7-h2V"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="QMF-pc-pvj" firstAttribute="leading" secondItem="iUg-r8-ln2" secondAttribute="leading" constant="50" id="1Va-IM-EwY"/>
                             <constraint firstItem="iUg-r8-ln2" firstAttribute="trailing" secondItem="HDK-PX-wQZ" secondAttribute="trailing" id="2mm-Yr-gb5"/>
+                            <constraint firstItem="iUg-r8-ln2" firstAttribute="trailing" secondItem="z2D-JJ-cNJ" secondAttribute="trailing" constant="40" id="3VF-FN-43o"/>
+                            <constraint firstItem="iUg-r8-ln2" firstAttribute="trailing" secondItem="QMF-pc-pvj" secondAttribute="trailing" constant="50" id="5c9-1I-as0"/>
                             <constraint firstAttribute="trailing" secondItem="RJM-TU-KAs" secondAttribute="trailing" id="7TN-9m-Li4"/>
                             <constraint firstItem="ASG-JC-7YH" firstAttribute="top" secondItem="HDK-PX-wQZ" secondAttribute="bottom" constant="28.5" id="9Jw-5f-q54"/>
                             <constraint firstItem="iUg-r8-ln2" firstAttribute="trailing" secondItem="ASG-JC-7YH" secondAttribute="trailing" id="DgK-cK-Kxp"/>
                             <constraint firstItem="ASG-JC-7YH" firstAttribute="leading" secondItem="iUg-r8-ln2" secondAttribute="leading" id="EfI-nX-RC0"/>
+                            <constraint firstItem="iUg-r8-ln2" firstAttribute="bottom" secondItem="AjF-NX-tti" secondAttribute="bottom" constant="100" id="Iqc-qR-D2h"/>
+                            <constraint firstItem="z2D-JJ-cNJ" firstAttribute="leading" secondItem="iUg-r8-ln2" secondAttribute="leading" constant="40" id="KJG-1W-ZKI"/>
                             <constraint firstAttribute="bottom" secondItem="RJM-TU-KAs" secondAttribute="bottom" id="QeO-t8-0FG"/>
                             <constraint firstItem="ASG-JC-7YH" firstAttribute="centerY" secondItem="bKk-0G-d9I" secondAttribute="centerY" constant="-60" id="Tc1-J9-uQj"/>
+                            <constraint firstItem="AjF-NX-tti" firstAttribute="leading" secondItem="iUg-r8-ln2" secondAttribute="leading" constant="20" id="eEW-ys-iPd"/>
+                            <constraint firstItem="QMF-pc-pvj" firstAttribute="top" secondItem="ASG-JC-7YH" secondAttribute="bottom" constant="20" id="gO7-4L-CL6"/>
                             <constraint firstItem="RJM-TU-KAs" firstAttribute="top" secondItem="bKk-0G-d9I" secondAttribute="top" id="gUE-mI-a9k"/>
+                            <constraint firstItem="HDK-PX-wQZ" firstAttribute="top" secondItem="z2D-JJ-cNJ" secondAttribute="bottom" constant="22" id="oWT-j9-0iS"/>
                             <constraint firstItem="RJM-TU-KAs" firstAttribute="leading" secondItem="bKk-0G-d9I" secondAttribute="leading" id="uoF-gd-Qmc"/>
                             <constraint firstItem="HDK-PX-wQZ" firstAttribute="leading" secondItem="iUg-r8-ln2" secondAttribute="leading" id="y1O-Pu-ifO"/>
                         </constraints>
@@ -270,11 +298,13 @@
                     <connections>
                         <outlet property="answerEnLab" destination="HDK-PX-wQZ" id="9mO-Rd-5lo"/>
                         <outlet property="answerLab" destination="ASG-JC-7YH" id="TYf-qT-qnP"/>
+                        <outlet property="bottonLine" destination="QMF-pc-pvj" id="Xcd-QG-Qld"/>
+                        <outlet property="constellationImage" destination="AjF-NX-tti" id="TO0-4N-MR9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yjf-Gg-IT8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1493.5999999999999" y="590.55472263868069"/>
+            <point key="canvasLocation" x="1492.753623188406" y="590.21739130434787"/>
         </scene>
         <!--PageVC-->
         <scene sceneID="6pE-rT-QjB">
@@ -333,5 +363,7 @@
     </scenes>
     <resources>
         <image name="backImg" width="480" height="800"/>
+        <image name="constellation-1" width="512" height="512"/>
+        <image name="textBoard" width="2280" height="1200"/>
     </resources>
 </document>

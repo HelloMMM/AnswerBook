@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -171,16 +172,16 @@
         <!--PurchasVC-->
         <scene sceneID="Rk3-1T-DYt">
             <objects>
-                <viewController id="0Su-Ry-nMP" customClass="PurchasVC" customModule="解答之星" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="0Su-Ry-nMP" customClass="PurchasVC" customModule="解答之星" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FmH-Eh-Bao">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backImg" translatesAutoresizingMaskIntoConstraints="NO" id="vFq-dQ-Knb">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWO-5t-qnx">
-                                <rect key="frame" x="177" y="179" width="60" height="54"/>
+                                <rect key="frame" x="177" y="184" width="60" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="8Ym-Qn-Gw5"/>
                                     <constraint firstAttribute="height" constant="54" id="SBG-7o-pOp"/>
@@ -194,7 +195,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80G-yA-u8E">
-                                <rect key="frame" x="147" y="283" width="120" height="54"/>
+                                <rect key="frame" x="147" y="288" width="120" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="cSK-34-oF4"/>
                                     <constraint firstAttribute="height" constant="54" id="ff1-y3-MBh"/>
@@ -205,6 +206,17 @@
                                 </state>
                                 <connections>
                                     <action selector="restorePurchas:" destination="0Su-Ry-nMP" eventType="touchUpInside" id="zqf-U6-HfV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhH-jZ-sDc">
+                                <rect key="frame" x="20" y="20" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="BaX-5c-6Qo"/>
+                                    <constraint firstAttribute="width" constant="50" id="y6f-YO-ZNO"/>
+                                </constraints>
+                                <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backAction:" destination="0Su-Ry-nMP" eventType="touchUpInside" id="zvk-ID-GP1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -218,6 +230,8 @@
                             <constraint firstItem="vFq-dQ-Knb" firstAttribute="bottom" secondItem="zgv-4K-eV0" secondAttribute="bottom" id="We1-AL-Jn2"/>
                             <constraint firstItem="80G-yA-u8E" firstAttribute="centerX" secondItem="FmH-Eh-Bao" secondAttribute="centerX" id="eZG-x7-cQQ"/>
                             <constraint firstItem="BWO-5t-qnx" firstAttribute="top" secondItem="vFq-dQ-Knb" secondAttribute="bottom" multiplier="1:4" id="ehS-8k-IwX"/>
+                            <constraint firstItem="HhH-jZ-sDc" firstAttribute="leading" secondItem="zgv-4K-eV0" secondAttribute="leading" constant="20" id="rnh-dz-MAR"/>
+                            <constraint firstItem="HhH-jZ-sDc" firstAttribute="top" secondItem="zgv-4K-eV0" secondAttribute="top" constant="20" id="v4u-nm-4hG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zgv-4K-eV0"/>
                     </view>
@@ -362,6 +376,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="512" height="512"/>
         <image name="backImg" width="480" height="800"/>
         <image name="constellation-1" width="512" height="512"/>
         <image name="textBoard" width="2280" height="1200"/>

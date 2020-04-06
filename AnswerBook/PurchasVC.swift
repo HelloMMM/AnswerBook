@@ -54,4 +54,7 @@ class PurchasVC: UIViewController {
         iapManager.restorePurchase()
     }
     
+    @IBAction func backAction(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
 }

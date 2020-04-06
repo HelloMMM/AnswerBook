@@ -23,9 +23,11 @@ class LaunchScreen: UIViewController {
         super.viewDidLoad()
 
         skView.backgroundColor = .clear
+        skView.allowsTransparency = true
         let skScene = SKScene(size: skView.frame.size)
         skScene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        skScene.backgroundColor = .clear
+        skScene.backgroundColor = UIColor.clear
+        skScene.scaleMode = .aspectFill
         skView.presentScene(skScene)
         view.addSubview(skView)
         

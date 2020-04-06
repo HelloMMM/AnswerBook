@@ -117,7 +117,7 @@ extension PageVC: MainVCDelegate {
         answerVC.answerEn = answerEnList[answerIndex]
         
         let constellationIndex = Int.random(in: 1...25)
-        answerVC.constellationImage.image = UIImage(named: "constellation-\(constellationIndex)")
+        answerVC.constellationImageStr = "constellation-\(constellationIndex)"
         
         setViewControllers([answerVC], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: nil)
     }

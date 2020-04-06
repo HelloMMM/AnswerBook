@@ -18,6 +18,7 @@ class AnswerVC: UIViewController {
     var bannerView: GADBannerView!
     @IBOutlet weak var constellationImage: UIImageView!
     @IBOutlet weak var bottonLine: UIView!
+    var constellationImageStr = "constellation-1"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,7 @@ class AnswerVC: UIViewController {
         answerLab.text = answerStr
         answerEnLab.text = answerEn
         
+        constellationImage.image = UIImage(named: constellationImageStr)
     }
     
     func addBannerViewToView() {

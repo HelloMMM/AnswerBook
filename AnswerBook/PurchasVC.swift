@@ -29,8 +29,6 @@ class PurchasVC: UIViewController {
         alert.addAction(ok)
         
         present(alert, animated: true, completion: nil)
-        
-        GlobalModel.shared.isRemoveAD = true
     }
     
     @IBAction func startPurchas(_ sender: UIButton) {

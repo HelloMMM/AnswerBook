@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LaunchScreenDelegate {
         let storage = Storage.storage()
         let answerListReference = storage.reference(forURL: "gs://answerbook-f4a2c.appspot.com/answerList.json")
         let answerEnListReference = storage.reference(forURL: "gs://answerbook-f4a2c.appspot.com/answerEnList.json")
-        
+
 //        #if DEBUG
 //
 //        if !JSONSerialization.isValidJSONObject(answerList) {
@@ -34,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LaunchScreenDelegate {
 //        do {
 //            let data = try JSONSerialization.data(withJSONObject: dic, options: [.prettyPrinted])
 //            let decoded = try JSONSerialization.jsonObject(with: data, options: [])
+//
 //            let uploadTask = answerListReference.putData(data, metadata: nil) { (metadata, error) in
 //
 //            }

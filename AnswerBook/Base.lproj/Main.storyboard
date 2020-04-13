@@ -172,16 +172,16 @@
         <!--PurchasVC-->
         <scene sceneID="Rk3-1T-DYt">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="0Su-Ry-nMP" customClass="PurchasVC" customModule="解答之星" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0Su-Ry-nMP" customClass="PurchasVC" customModule="解答之星" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FmH-Eh-Bao">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backImg" translatesAutoresizingMaskIntoConstraints="NO" id="vFq-dQ-Knb">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWO-5t-qnx">
-                                <rect key="frame" x="177" y="184" width="60" height="54"/>
+                                <rect key="frame" x="177" y="179" width="60" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="8Ym-Qn-Gw5"/>
                                     <constraint firstAttribute="height" constant="54" id="SBG-7o-pOp"/>
@@ -195,7 +195,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80G-yA-u8E">
-                                <rect key="frame" x="147" y="288" width="120" height="54"/>
+                                <rect key="frame" x="147" y="283" width="120" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="cSK-34-oF4"/>
                                     <constraint firstAttribute="height" constant="54" id="ff1-y3-MBh"/>

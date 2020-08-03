@@ -8,7 +8,7 @@ target 'AnswerBook' do
   # Pods for AnswerBook
 
 pod 'UICircularProgressRing'
-pod'Google-Mobile-Ads-SDK'
+pod 'Google-Mobile-Ads-SDK'
 pod 'NVActivityIndicatorView'
 pod 'Firebase/Analytics'
 pod 'Firebase/Storage'

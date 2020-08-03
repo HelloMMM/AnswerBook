@@ -81,16 +81,14 @@ extension PageVC: MainVCDelegate {
             nextPage()
             return
         }
-        
-        if adCount >= 2 {
             
-            if interstitial.isReady {
-                interstitial.present(fromRootViewController: self)
-            } else {
-              
-                interstitial = createAndLoadInterstitial()
-                nextPage()
-            }
+        if interstitial.isReady {
+            interstitial.present(fromRootViewController: self)
+        } else {
+          
+            interstitial = createAndLoadInterstitial()
+            nextPage()
+        }
             
 //            if rewarAd?.isReady == true {
 //
@@ -100,11 +98,6 @@ extension PageVC: MainVCDelegate {
 //                rewarAd = createAndLoadRewardedAd()
 //                nextPage()
 //            }
-        } else {
-            
-            adCount += 1
-            nextPage()
-        }
     }
     
     func nextPage() {
